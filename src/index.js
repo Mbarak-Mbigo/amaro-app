@@ -1,18 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './app/App';
+import App from './app/app';
 import * as serviceWorker from './serviceWorker';
-
-// import { SILVER_GREY } from './utils/colors';
-
-// import { createGlobalStyle } from 'styled-components'
-
-// const GlobalStyle = createGlobalStyle`
-//   body {
-//     background-color: ${SILVER_GREY};
-//     margin: 0;
-//   }
-// `
 
 ReactDOM.render(
 <App />, document.getElementById('root')
