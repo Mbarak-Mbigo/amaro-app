@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Component renders App component 1`] = `
+<div
+  className="sc-bdVaJa bDWFJH"
+>
+  <header
+    className="sc-bwzfXH huTMRj"
+  >
+    Header Part
+  </header>
+  <section
+    className="sc-htpNat bsbVPk"
+  >
+    App
+  </section>
+  <footer
+    className="sc-bxivhb gRxwYG"
+  >
+    Footer
+  </footer>
+</div>
+`;
