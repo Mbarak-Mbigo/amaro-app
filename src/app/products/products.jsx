@@ -11,7 +11,7 @@ const getProducts = dispatch => {
 const Products = () => {
   const dispatch = useDispatch();
 
-  const { isLoading, hasLoaded, error: { hasError, error}, data } = useSelector(state => state.products);
+  const { isLoading, hasLoaded, error: { hasError }, data } = useSelector(state => state.products);
 
   useEffect(() => {
     if(!data.length) {
@@ -19,7 +19,6 @@ const Products = () => {
     }
   }, [dispatch, data.length]);
 
-  console.log('products', isLoading, hasLoaded, hasError, error, data);
 
   return (
   <React.Fragment>
