@@ -8,7 +8,7 @@ function* fetchProducts() {
   try {
     const data = yield call(getProducts);
 
-    yield put(fetchProductSucceeded(data));
+    yield put(fetchProductSucceeded(data.products));
     
   } catch (error) {
     yield put(fetchProductFailed('Failed to fetch products'));

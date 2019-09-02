@@ -1,7 +1,11 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components'
 
+import { Provider } from 'react-redux' 
+import store from '../roots/store';
 import { SILVER_GREY } from '../utils/colors';
+
+import Products from './products/products.jsx';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -32,16 +36,18 @@ const Footer = styled.footer`
 `;
 
 const App = () => (
+  <Provider store={store}>
       <Container>
       <GlobalStyle />
       <Header>Header Part</Header>
       <MainContent>
-        App
+        <Products/>
       </MainContent>
       <Footer>
         Footer
       </Footer>
       </Container>
+  </Provider>
   );
 
 export default App;
