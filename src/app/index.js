@@ -1,14 +1,17 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
+import { PersistGate } from 'redux-persist/integration/react'
 
 import { Provider } from 'react-redux' 
-import store from '../roots/store';
+import createStore from '../roots/store'
 import { SILVER_GREY } from '../utils/colors';
 
 import Dashboard from './dashboard.jsx'
 import Header from '../Components/header';
 import Footer from '../Components/footer';
-import Navigation from '../Components/navigation'
+import Navigation from '../Components/navigation';
+
+const { store, persistor } = createStore();
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -24,6 +27,7 @@ const MainContent = styled.section`
 
 const App = () => (
   <Provider store={store}>
+     <PersistGate loading={null} persistor={persistor}>
       <GlobalStyle />
       <Header>
         AMARO APP
@@ -35,6 +39,7 @@ const App = () => (
       <Footer>
         Amaro @2019
       </Footer>
+      </PersistGate>
   </Provider>
   );
 
