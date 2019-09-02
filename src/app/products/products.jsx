@@ -11,11 +11,13 @@ const getProducts = dispatch => {
 const Products = () => {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    getProducts(dispatch);
-  }, []);
-
   const { isLoading, hasLoaded, error: { hasError, error}, data } = useSelector(state => state.products);
+
+  useEffect(() => {
+    if(!data.length) {
+      getProducts(dispatch);
+    }
+  }, [dispatch, data.length]);
 
   console.log('products', isLoading, hasLoaded, hasError, error, data);
 
