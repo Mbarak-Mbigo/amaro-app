@@ -1,11 +1,14 @@
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components';
 
 import { Provider } from 'react-redux' 
 import store from '../roots/store';
 import { SILVER_GREY } from '../utils/colors';
 
-import Products from './products/products.jsx';
+import Dashboard from './dashboard.jsx'
+import Header from '../Components/header';
+import Footer from '../Components/footer';
+import Navigation from '../Components/navigation'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -13,40 +16,25 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 `
-const Container = styled.div``;
-
-const Header = styled.header`
-  height: 12rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid black;
-`
-
 const MainContent = styled.section`
   display: flex;
   justify-content: center;
-  border: 2px solid red;
-  height: calc(100vh - 288px)
-`;
-
-const Footer = styled.footer`
-  border: 2px solid green;
-  height: 98px;
+  min-height: 77vh;
 `;
 
 const App = () => (
   <Provider store={store}>
-      <Container>
       <GlobalStyle />
-      <Header>Header Part</Header>
+      <Header>
+        AMARO APP
+      </Header>
+      <Navigation handleAddProduct={() => {}} />
       <MainContent>
-        <Products/>
+        <Dashboard />
       </MainContent>
       <Footer>
-        Footer
+        Amaro @2019
       </Footer>
-      </Container>
   </Provider>
   );
 
