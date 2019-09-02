@@ -31,8 +31,6 @@ const Footer = styled.footer`
   height: 98px;
 `;
 
-
-
 const App = () => (
       <Container>
       <GlobalStyle />
