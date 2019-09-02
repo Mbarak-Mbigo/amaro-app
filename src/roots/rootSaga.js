@@ -1,8 +1,10 @@
 import { call, all, spawn } from 'redux-saga/effects';
 
+import products from '../app/products/saga';
+
 export default function* rootSaga () {
   const sagas = [
-    //individual sagas here
+    products,
   ];
 
   yield all(sagas.map(saga =>
