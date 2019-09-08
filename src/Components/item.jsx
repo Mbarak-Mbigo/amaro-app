@@ -31,21 +31,27 @@ const TR = styled.tr``;
 
 const TD = styled.td``;
 
-const Size = ({ sku, size, available, handleAddToCart }) => (
+const Label = styled.label`
+  display: block;
+`;
+
+const Size = ({ sku, size, available, onSale, handleAddToCart }) => (
   <TB>
     <TR>
       <TD>{size}</TD>
       <TD>{available ? "Available" : "Out of Stock"}</TD>
       {!!available && (
         <TD>
-          <button onClick={handleAddToCart(sku)}>Add to Cart</button>
+          <button disabled={!onSale} onClick={handleAddToCart(sku)}>
+            Add to Cart
+          </button>
         </TD>
       )}
     </TR>
   </TB>
 );
 
-const Sizes = ({ sizeList, handleAddToCart }) => (
+const Sizes = ({ sizeList, onSale, handleAddToCart }) => (
   <React.Fragment>
     <SizeTable>
       <TR>
@@ -53,13 +59,26 @@ const Sizes = ({ sizeList, handleAddToCart }) => (
         <Th>Availability</Th>
       </TR>
       {sizeList.map((sizeData, index) => (
-        <Size key={index} {...sizeData} handleAddToCart={handleAddToCart} />
+        <Size
+          key={index}
+          {...sizeData}
+          handleAddToCart={handleAddToCart}
+          onSale={onSale}
+        />
       ))}
     </SizeTable>
   </React.Fragment>
 );
 
-const Item = ({ name, image, sizes }) => {
+const Item = ({
+  name,
+  image,
+  regular_price,
+  actual_price,
+  discount_percentage,
+  on_sale,
+  sizes
+}) => {
   const handleAddToCart = sku => () => {
     console.log("Add Item to cart", sku);
   };
@@ -70,7 +89,18 @@ const Item = ({ name, image, sizes }) => {
       <Image
         src={image ? image : require("../images/image-not-available.jpg")}
       ></Image>
-      <Sizes sizeList={sizes} handleAddToCart={handleAddToCart} />
+      {<Label>Promotion: {!!discount_percentage ? "On" : "Off"}</Label>}
+      {<Label>On Sale: {on_sale ? "Yes" : "No"}</Label>}
+      <Label>Regular. Price: {regular_price}</Label>
+      {!!discount_percentage && <Label>Actual. Price: {actual_price}</Label>}
+      {!!discount_percentage && (
+        <Label>Discount: {`${discount_percentage} off`}</Label>
+      )}
+      <Sizes
+        sizeList={sizes}
+        handleAddToCart={handleAddToCart}
+        onSale={on_sale}
+      />
     </Container>
   );
 };
