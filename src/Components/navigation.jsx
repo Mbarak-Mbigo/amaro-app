@@ -23,7 +23,7 @@ const SearchInput = styled(TextField)`
    font-size: 1rem;
 `;
 
-const handleAddProduct = () => {
+const openCart = () => {
 
 }
 
@@ -34,7 +34,7 @@ const handleSearch = () => {
 const Navigation = () => (
   <Container>
     <LinksWrapper>
-    <Button onClick={handleAddProduct}>Add</Button>
+    <Button onClick={openCart}>View Cart</Button>
     </LinksWrapper>
     <SearchInput onChange={handleSearch} name={'searchBox'} placeholder={'Search products'} />
   </Container>
