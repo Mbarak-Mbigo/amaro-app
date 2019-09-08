@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-import Button from './button';
-import TextField from './text-field';
+import TextField from "./text-field";
 
 const Container = styled.div`
   display: flex;
@@ -18,28 +18,24 @@ const LinksWrapper = styled.div`
 `;
 
 const SearchInput = styled(TextField)`
-   width: 10rem;
-   height: 2rem;
-   font-size: 1rem;
+  width: 10rem;
+  height: 2rem;
+  font-size: 1rem;
 `;
 
-const openCart = () => {
-
-}
-
-const handleSearch = () => {
-  
-}
+const handleSearch = () => {};
 
 const Navigation = () => (
   <Container>
     <LinksWrapper>
-    <Button onClick={openCart}>View Cart</Button>
+      <Link to={"/cart"}>View Cart</Link>
     </LinksWrapper>
-    <SearchInput onChange={handleSearch} name={'searchBox'} placeholder={'Search products'} />
+    <SearchInput
+      onChange={handleSearch}
+      name={"searchBox"}
+      placeholder={"Search products"}
+    />
   </Container>
-)
+);
 
 export default Navigation;
-
-
