@@ -9,12 +9,7 @@ const Container = styled.div`
 `;
 
 const Cart = () => {
-  const {
-    updating,
-    updated,
-    error: { hasError },
-    selected
-  } = useSelector(state => state.cart);
+  const { selected } = useSelector(state => state.cart);
   const handleCheckout = () => {
     console.log("handleCheckout");
   };
