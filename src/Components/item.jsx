@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { useDispatch, useSelector } from "react-redux";
+
+import { addItemToCart } from "../app/cart/action";
 
 const Container = styled.div`
   width: 16rem;
@@ -79,8 +82,27 @@ const Item = ({
   on_sale,
   sizes
 }) => {
+  const dispatch = useDispatch();
+  const { data } = useSelector(state => state.products);
+
   const handleAddToCart = sku => () => {
-    console.log("Add Item to cart", sku);
+    const {
+      name,
+      image,
+      regular_price,
+      actual_price,
+      discount_percentage
+    } = data.find(item => item.sizes.find(size => size.sku === sku));
+
+    dispatch(
+      addItemToCart({
+        sku,
+        name,
+        image,
+        price: !!discount_percentage ? actual_price : regular_price,
+        quantity: 1
+      })
+    );
   };
 
   return (

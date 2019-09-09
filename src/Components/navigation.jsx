@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+
+import LinkButton from "./link";
 
 import TextField from "./text-field";
 
@@ -25,17 +27,27 @@ const SearchInput = styled(TextField)`
 
 const handleSearch = () => {};
 
-const Navigation = () => (
-  <Container>
-    <LinksWrapper>
-      <Link to={"/cart"}>View Cart</Link>
-    </LinksWrapper>
-    <SearchInput
-      onChange={handleSearch}
-      name={"searchBox"}
-      placeholder={"Search products"}
-    />
-  </Container>
-);
+const totalQuantity = selectedItems =>
+  selectedItems.reduce((acc, item) => acc + item.quantity, 0);
+
+const Navigation = () => {
+  const { selected } = useSelector(state => state.cart);
+
+  return (
+    <Container>
+      <LinksWrapper>
+        <LinkButton to={"/cart"}>View Cart</LinkButton>
+        <LinkButton to={"/cart"}>
+          {`Selected Items: ${totalQuantity(selected)}`}
+        </LinkButton>
+      </LinksWrapper>
+      <SearchInput
+        onChange={handleSearch}
+        name={"searchBox"}
+        placeholder={"Search products"}
+      />
+    </Container>
+  );
+};
 
 export default Navigation;
