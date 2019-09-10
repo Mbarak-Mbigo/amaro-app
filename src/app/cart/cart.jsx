@@ -11,7 +11,7 @@ const Container = styled.div`
 const Cart = () => {
   const { selected } = useSelector(state => state.cart);
   const handleCheckout = () => {
-    console.log("handleCheckout");
+    // handle checkout logic
   };
 
   return (
