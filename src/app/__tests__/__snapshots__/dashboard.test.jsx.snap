@@ -1,3 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DashBoard Component renders Dashboard component 1`] = `ShallowWrapper {}`;
+exports[`DashBoard Component renders Dashboard component 1`] = `
+<div>
+  <div
+    className="sc-gqjmRU jlTudv"
+  >
+    <div
+      className="sc-VigVT ieyXlk"
+    >
+      <a
+        className="sc-iwsKbI hLjuIW"
+        href="/cart"
+        onClick={[Function]}
+      >
+        View Cart
+      </a>
+      <a
+        className="sc-iwsKbI hLjuIW"
+        href="/cart"
+        onClick={[Function]}
+      >
+        Selected Items: 0
+      </a>
+    </div>
+    <input
+      className="sc-jTzLTM eewZEe sc-gZMcBi hpIRxJ"
+      name="searchBox"
+      onChange={[Function]}
+      placeholder="Search products"
+    />
+  </div>
+</div>
+`;
