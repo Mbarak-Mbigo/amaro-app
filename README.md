@@ -1,4 +1,4 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/a6de80eb6a3861bfb0a0/maintainability)](https://codeclimate.com/github/Mbarak-Mbigo/amaro-app/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/a6de80eb6a3861bfb0a0/test_coverage)](https://codeclimate.com/github/Mbarak-Mbigo/amaro-app/test_coverage)
+[![Build Status](https://travis-ci.org/Mbarak-Mbigo/amaro-app.svg?branch=master)](https://travis-ci.org/Mbarak-Mbigo/amaro-app) [![Maintainability](https://api.codeclimate.com/v1/badges/a6de80eb6a3861bfb0a0/maintainability)](https://codeclimate.com/github/Mbarak-Mbigo/amaro-app/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/a6de80eb6a3861bfb0a0/test_coverage)](https://codeclimate.com/github/Mbarak-Mbigo/amaro-app/test_coverage)
 
 # amaro-app
 A Catalog Frontend Application
