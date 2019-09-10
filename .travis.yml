@@ -1,7 +1,3 @@
-env:
-  global:
-    - CC_TEST_REPORTER_ID=b58510ab51679494b95142acdc90890d980d3e161258dcd3233ca01960ddbf30
-
 language: node_js
 node_js:
   - 8
@@ -10,6 +6,7 @@ install:
   - yarn
 
 before_script:
+  - yarn add nyc -g
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
