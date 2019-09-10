@@ -1,23 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App Component renders App component 1`] = `
-<div
-  className="sc-bdVaJa bDWFJH"
->
+exports[`App Component Tests renders App component 1`] = `
+Array [
   <header
-    className="sc-bwzfXH huTMRj"
+    className="sc-fjdhpX bIUKac"
   >
-    Header Part
-  </header>
+    AMARO APP
+  </header>,
   <section
-    className="sc-htpNat bsbVPk"
+    className="sc-kAzzGY hcyXWG"
   >
-    App
-  </section>
+    <div>
+      <div
+        className="sc-gqjmRU jlTudv"
+      >
+        <div
+          className="sc-VigVT ieyXlk"
+        >
+          <a
+            className="sc-iwsKbI hLjuIW"
+            href="/cart"
+            onClick={[Function]}
+          >
+            View Cart
+          </a>
+          <a
+            className="sc-iwsKbI hLjuIW"
+            href="/cart"
+            onClick={[Function]}
+          >
+            Selected Items: 0
+          </a>
+        </div>
+        <input
+          className="sc-jTzLTM eewZEe sc-gZMcBi hpIRxJ"
+          name="searchBox"
+          onChange={[Function]}
+          placeholder="Search products"
+        />
+      </div>
+    </div>
+  </section>,
   <footer
-    className="sc-bxivhb gRxwYG"
+    className="sc-jzJRlG cGzWMF"
   >
-    Footer
-  </footer>
-</div>
+    Amaro @2019
+  </footer>,
+]
 `;
