@@ -1,24 +1,24 @@
 language: node_js
 node_js:
-- 8
+  - 8
 install:
-- yarn
+  - yarn
 before_script:
-- yarn add nyc -g
-- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
-  > ./cc-test-reporter
-- chmod +x ./cc-test-reporter
-- "./cc-test-reporter before-build"
+  - yarn add nyc -g
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+    > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - "./cc-test-reporter before-build"
 script:
-- yarn test
+  - yarn test
 after_script:
-- "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
+  - "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
 cache: yarn
 deploy:
   provider: heroku
   api_key:
     secure: H4YbvXo8vz0m00+Uxbai3Elux5IgQHamzdA5/ifW5kKMVBzU43lwfNBJ0i9VATgDOWgNqToGGZ6zLrztzMbGzfac+tONdeS+LA0YzoP2cMVJi/2xrB5OUhWC6Mnem8ym2eZKongEdYaB57fB9arg2itqjvTkxcGhvKSsulIZr+vCJUcYIWRJVToHV0ftJg41DBQOZkO8uZFUtNOta06lWFzp45qTV2hhdCD7xuEv+HuXVq6PyhZs9UtranqoiGel6nSNk8hZSBDTmplqcdUIL17ZS2OhUv29RR4YKWBU/ku+ginQiSytyiEnmsZzGQfVXzonJ3+JxMQe3+z/D5p1PgXB0kRgROQdR1oUU+dQl9+FcFsL9eHB3o+/89yTVv1N1LOAvm9rLmETHkOffdG+zvv2Pwkk3NxkUVTkoTG1JqkS7QZR9D+4WTL/+SjSBR98dzI4agOPD+YVHb4/NqdAAvegmd5hoBGyiYkHy8Vag9bSYXGNU+V8GTtNc298TrmswCWgGioQ5cE5i7M9MS0KY3sVlGMLAd9BTNFG9JPs7pIRU3upslw6r3WMqbCEq+qFzEA510SRoW0swuqyHpkgJdU8vMHI1NfIlSkL9nebwiQ6HoLhSooOwjx7w4qWocGozivXIQEbYzndI0ZD7v04LXlS8wGcQCFr+9/ASc75iOw=
-  app: amaro-shopping-app
+  app: amaro-app
   run:
-  - heroku-postbuild
-  - start
+    - heroku-postbuild
+    - start
