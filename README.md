@@ -3,6 +3,11 @@
 # amaro-app
 A Catalog Frontend Application
 
+You can access hosted app here
+```
+   https://amaro-app.herokuapp.com/
+```
+
 ## Scripts
 
 ### Clone Repo
